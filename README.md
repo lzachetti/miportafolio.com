@@ -3,7 +3,4 @@
 #Pagina web
 
 Grupo: 
-Medina David
-Ordoñez Leonardo
-Alija Rodirgo
-Zachetti Leonardo
+Medina David - Ordoñez Leonardo - Alija Rodirgo - Zachetti Leonardo
