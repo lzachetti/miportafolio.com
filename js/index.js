@@ -6,9 +6,28 @@ const celular = document.querySelector('#celular');
 const correo = document.querySelector('#correo');
 const direccion = document.querySelector('#direccion');
 const pais = document.querySelector('#pais');
+const f_name = document.getElementById("name");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+const form = document.getElementById("form");
+const parrafo = document.getElementById("warnings");
+
+//////btn read more text /////////
+
+let hideText_btn = document.getElementById('hideText_btn');
+let hideText = document.getElementById('hideText');
+hideText_btn.addEventListener('click', toggleText);
+function toggleText() {
+    hideText.classList.toggle('show');
+    if (hideText.classList.contains('show')) {
+        hideText_btn.innerHTML = 'Read Less';
+    } else {
+        hideText_btn.innerHTML = 'Read More';
+    }
+}
 
 
-//funcion
+//funcion API
 const generarUsuario = async () => {
     try {
         const url = ' https://randomuser.me/api/ ';
@@ -30,19 +49,32 @@ const generarUsuario = async () => {
 }
 generarUsuario();
 
-//////btn read text /////////
 
-let hideText_btn = document.getElementById('hideText_btn');
-let hideText = document.getElementById('hideText');
-hideText_btn.addEventListener('click', toggleText);
-function toggleText(){
-    hideText.classList.toggle('show');
-    if(hideText.classList.contains('show')){
-        hideText_btn.innerHTML = 'Read Less';
+//////validation form/////////
+
+function validarform() {
+    //e.preventDefault();
+    let warnings = "";
+    let entrar = false;
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    parrafo.innerHTML = "";
+    if(f_name.value.length == 0){
+        warnings += "El nombre no es valido <br>";
+        entrar = true;
+    }
+    if(!regexEmail.test(email.value)){
+        warnings += `El email no es valido <br>`
+        entrar = true
+    }
+    if(message.value.length == 0){
+        warnings += "El message no es valido <br>";
+        entrar = true;
+    }
+
+    if(entrar){
+        parrafo.innerHTML = warnings;
     }else{
-        hideText_btn.innerHTML = 'Read More';
+        parrafo.innerHTML = "Enviado";
     }
 }
-
-
 

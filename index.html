@@ -159,7 +159,8 @@
         </section>
         <section class="right-section">
             <div class="right-main-contenido">
-                <section class="seccion" id="about">
+                
+                <section class="seccion">
                     <h2 class="right-titulo">About Me</h2>
                     <p class="para">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam molestias facilis ullam
@@ -167,16 +168,18 @@
                         dolore nostrum assumenda obcaecati animi commodi nobis labore exercitationem corporis esse
                         eveniet optio laudantium molestiae maiores pariatur nisi cumque.
                         Distinctio et, totam, dicta autem nostrum doloribus ipsam vel rerum, molestiae soluta
-                        laboriosam. <br>
-                        <br>
+                        laboriosam. 
+                        <br><br>
                         <span class="hide" id="hideText">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Architecto iusto porro suscipit.
                             Nihil blanditiis cum voluptates odio recusandae deleniti, nulla repudiandae aliquam adipisci
                             iusto reiciendis sequi labore quos ratione accusamus consectetur,
                             libero ex assumenda pariatur commodi animi nobis, dolore id.</span>
-                    </p>
-                    <!---agregar boton descargar curriculum-->
+
                     <button class="read-more-btn" id="hideText_btn">Read More</button>
+                    </p>
+                    
+                    
 
                 </section>
 
@@ -285,7 +288,7 @@
                 <section class="seccion" id="contacto">
                     <h2 class="right-titulo">Contact us</h2>
 
-                    <form action="" class="contact">
+                    <form name="form" id="form" action="" class="contact" method="POST">
                         <label for="name">Name *</label>
                         <input type="text" name="name" value="" id="name" placeholder="Required" aria-required="true"
                             required>
@@ -297,7 +300,12 @@
                         <label for="message">Message *</label>
                         <textarea name="message" value="" id="message" placeholder="Required" aria-required="true"
                             required></textarea>
-                        <input type="submit" value="Send" id="submit">
+                        <label class="warnings" id="warnings"></label>
+                        
+                        <!--<button type="submit" value="Send" id="submit"></button>-->
+
+                        <input type="submit" value="Send" id="submit" onclick="validarform();">
+                        
                     </form>
                 </section>
             </div>
